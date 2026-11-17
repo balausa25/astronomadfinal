@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Sign Up — Astronomad</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/jquery-styles.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><span class="logo-icon">✦</span> Astronomad</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="planets.html">Planets</a>
+        <a href="deep-space.html">Deep Space</a>
+        <a href="missions.html">Missions</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" style="color: #fbbf24; font-weight: 700;">🔐 Login</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <section class="form-section" style="max-width: 500px; margin: 5rem auto; padding: 0 1.5rem;">
+    
+    <!-- Тіркелу формасы -->
+    <form id="signupForm" class="contact-form" novalidate style="background: var(--surface); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border);">
+      <h2 style="margin-bottom: 1.5rem; text-align: center; color: #fff;">Create an Account</h2>
+      
+      <div class="field" style="margin-bottom: 1rem;">
+        <label style="color: var(--text); font-weight: 600; display: block; margin-bottom: 0.5rem;">Full Name</label>
+        <input type="text" id="regName" placeholder="John Doe" style="width: 100%; padding: 0.8rem; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.9); color: #222;">
+        <small class="error" id="regNameError" style="color: var(--danger); font-size: 0.8rem;"></small>
+      </div>
+      
+      <div class="field" style="margin-bottom: 1rem;">
+        <label style="color: var(--text); font-weight: 600; display: block; margin-bottom: 0.5rem;">Email Address</label>
+        <input type="text" id="regEmail" placeholder="your@email.com" style="width: 100%; padding: 0.8rem; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.9); color: #222;">
+        <small class="error" id="regEmailError" style="color: var(--danger); font-size: 0.8rem;"></small>
+      </div>
+      
+      <div class="field" style="margin-bottom: 1.5rem;">
+        <label style="color: var(--text); font-weight: 600; display: block; margin-bottom: 0.5rem;">Password</label>
+        <input type="password" id="regPassword" placeholder="Min 6 characters" style="width: 100%; padding: 0.8rem; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.9); color: #222;">
+        <small class="error" id="regPassError" style="color: var(--danger); font-size: 0.8rem;"></small>
+      </div>
+      
+      <button type="submit" class="btn btn-primary btn-full" style="width: 100%;">Sign Up</button>
+      
+      <p style="text-align: center; margin-top: 1.5rem; color: var(--text-muted);">
+        Already have an account? <a href="#" id="showLogin" style="color: var(--accent); font-weight: 600;">Log In</a>
+      </p>
+    </form>
+
+    <!-- Кіру формасы (жасырын тұрады) -->
+    <form id="loginForm" class="contact-form" novalidate style="display: none; background: var(--surface); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border);">
+      <h2 style="margin-bottom: 1.5rem; text-align: center; color: #fff;">Welcome Back</h2>
+      
+      <div class="field" style="margin-bottom: 1rem;">
+        <label style="color: var(--text); font-weight: 600; display: block; margin-bottom: 0.5rem;">Email Address</label>
+        <input type="text" id="loginEmail" placeholder="your@email.com" style="width: 100%; padding: 0.8rem; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.9); color: #222;">
+        <small class="error" id="loginEmailError" style="color: var(--danger); font-size: 0.8rem;"></small>
+      </div>
+      
+      <div class="field" style="margin-bottom: 1.5rem;">
+        <label style="color: var(--text); font-weight: 600; display: block; margin-bottom: 0.5rem;">Password</label>
+        <input type="password" id="loginPassword" placeholder="Your password" style="width: 100%; padding: 0.8rem; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.9); color: #222;">
+        <small class="error" id="loginPassError" style="color: var(--danger); font-size: 0.8rem;"></small>
+      </div>
+      
+      <button type="submit" class="btn btn-primary btn-full" style="width: 100%;">Log In</button>
+      
+      <p style="text-align: center; margin-top: 1.5rem; color: var(--text-muted);">
+        Don't have an account? <a href="#" id="showSignup" style="color: var(--accent); font-weight: 600;">Sign Up</a>
+      </p>
+    </form>
+
+  </section>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="js/script.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/jquery-features.js"></script>
+</body>
+</html>
